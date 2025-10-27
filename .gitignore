@@ -1,4 +1,9 @@
 .terraform/
-.terraform/
 *.tfstate
+*.tfstate.*
 *.tfstate.backup
+*.tfvars
+crash.log
+override.tf
+*_override.tf
+terraform.rc
