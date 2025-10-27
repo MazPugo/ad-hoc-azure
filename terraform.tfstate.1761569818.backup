@@ -1,0 +1,168 @@
+{
+  "version": 4,
+  "terraform_version": "1.13.4",
+  "serial": 39,
+  "lineage": "38a91081-b3ef-8799-f21e-202e27961f12",
+  "outputs": {
+    "public_ips": {
+      "value": [
+        "20.51.157.166",
+        "172.190.159.26",
+        "20.39.36.54",
+        "20.39.61.71"
+      ],
+      "type": [
+        "tuple",
+        [
+          "string",
+          "string",
+          "string",
+          "string"
+        ]
+      ]
+    }
+  },
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "azurerm_public_ip",
+      "name": "pip",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "index_key": 1,
+          "schema_version": 0,
+          "attributes": {
+            "allocation_method": "Static",
+            "ddos_protection_mode": "VirtualNetworkInherited",
+            "ddos_protection_plan_id": null,
+            "domain_name_label": null,
+            "domain_name_label_scope": null,
+            "edge_zone": "",
+            "fqdn": null,
+            "id": "/subscriptions/a0cbe0a4-e585-4e94-b04a-15f8e68d5d7a/resourceGroups/ad-hoc-demo-rg/providers/Microsoft.Network/publicIPAddresses/ad-hoc-demo-pip-1",
+            "idle_timeout_in_minutes": 4,
+            "ip_address": "172.166.134.100",
+            "ip_tags": null,
+            "ip_version": "IPv4",
+            "location": "uksouth",
+            "name": "ad-hoc-demo-pip-1",
+            "public_ip_prefix_id": null,
+            "resource_group_name": "ad-hoc-demo-rg",
+            "reverse_fqdn": null,
+            "sku": "Standard",
+            "sku_tier": "Regional",
+            "tags": null,
+            "timeouts": null,
+            "zones": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.rg"
+          ]
+        },
+        {
+          "index_key": 2,
+          "schema_version": 0,
+          "attributes": {
+            "allocation_method": "Static",
+            "ddos_protection_mode": "VirtualNetworkInherited",
+            "ddos_protection_plan_id": null,
+            "domain_name_label": null,
+            "domain_name_label_scope": null,
+            "edge_zone": "",
+            "fqdn": null,
+            "id": "/subscriptions/a0cbe0a4-e585-4e94-b04a-15f8e68d5d7a/resourceGroups/ad-hoc-demo-rg/providers/Microsoft.Network/publicIPAddresses/ad-hoc-demo-pip-2",
+            "idle_timeout_in_minutes": 4,
+            "ip_address": "172.167.36.165",
+            "ip_tags": null,
+            "ip_version": "IPv4",
+            "location": "uksouth",
+            "name": "ad-hoc-demo-pip-2",
+            "public_ip_prefix_id": null,
+            "resource_group_name": "ad-hoc-demo-rg",
+            "reverse_fqdn": null,
+            "sku": "Standard",
+            "sku_tier": "Regional",
+            "tags": null,
+            "timeouts": null,
+            "zones": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.rg"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_resource_group",
+      "name": "rg",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/a0cbe0a4-e585-4e94-b04a-15f8e68d5d7a/resourceGroups/ad-hoc-demo-rg",
+            "location": "uksouth",
+            "managed_by": "",
+            "name": "ad-hoc-demo-rg",
+            "tags": null,
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo1NDAwMDAwMDAwMDAwLCJkZWxldGUiOjU0MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjo1NDAwMDAwMDAwMDAwfX0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_subnet",
+      "name": "subnet",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address_prefixes": [
+              "10.0.1.0/24"
+            ],
+            "default_outbound_access_enabled": true,
+            "delegation": [],
+            "id": "/subscriptions/a0cbe0a4-e585-4e94-b04a-15f8e68d5d7a/resourceGroups/ad-hoc-demo-rg/providers/Microsoft.Network/virtualNetworks/ad-hoc-demo-vnet/subnets/ad-hoc-demo-subnet",
+            "ip_address_pool": [],
+            "name": "ad-hoc-demo-subnet",
+            "private_endpoint_network_policies": "Disabled",
+            "private_link_service_network_policies_enabled": true,
+            "resource_group_name": "ad-hoc-demo-rg",
+            "service_endpoint_policy_ids": [],
+            "service_endpoints": [],
+            "sharing_scope": "",
+            "timeouts": null,
+            "virtual_network_name": "ad-hoc-demo-vnet"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "ad-hoc-demo-subnet",
+            "resource_group_name": "ad-hoc-demo-rg",
+            "subscription_id": "a0cbe0a4-e585-4e94-b04a-15f8e68d5d7a",
+            "virtual_network_name": "ad-hoc-demo-vnet"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.rg",
+            "azurerm_virtual_network.vnet"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
