@@ -8,7 +8,7 @@ resource "azurerm_resource_group" "rg" {
   location = "UK South"
 }
 
-# 🔒 NSG allowing SSH
+#NSG allowing SSH
 resource "azurerm_network_security_group" "nsg" {
   name                = "ad-hoc-demo-nsg"
   location            = azurerm_resource_group.rg.location
@@ -27,7 +27,7 @@ resource "azurerm_network_security_group" "nsg" {
   }
 }
 
-# 🌐 Virtual Network
+#Virtual Network
 resource "azurerm_virtual_network" "vnet" {
   name                = "ad-hoc-demo-vnet"
   address_space       = ["10.0.0.0/16"]
@@ -35,7 +35,7 @@ resource "azurerm_virtual_network" "vnet" {
   resource_group_name = azurerm_resource_group.rg.name
 }
 
-# 🧩 Subnet
+# Subnet
 resource "azurerm_subnet" "subnet" {
   name                 = "ad-hoc-demo-subnet"
   resource_group_name  = azurerm_resource_group.rg.name
@@ -43,13 +43,13 @@ resource "azurerm_subnet" "subnet" {
   address_prefixes     = ["10.0.1.0/24"]
 }
 
-# 🔗 Associate NSG to subnet
+#Associate NSG to subnet
 resource "azurerm_subnet_network_security_group_association" "subnet_nsg" {
   subnet_id                 = azurerm_subnet.subnet.id
   network_security_group_id = azurerm_network_security_group.nsg.id
 }
 
-# 🌍 Public IPs
+#Public IPs
 resource "azurerm_public_ip" "pip" {
   count               = 4
   name                = "ad-hoc-demo-pip-${count.index}"
@@ -59,7 +59,7 @@ resource "azurerm_public_ip" "pip" {
   sku                 = "Standard"
 }
 
-# 🔌 Network Interfaces
+#Network Interfaces
 resource "azurerm_network_interface" "nic" {
   count               = 4
   name                = "ad-hoc-demo-nic-${count.index}"
@@ -74,7 +74,7 @@ resource "azurerm_network_interface" "nic" {
   }
 }
 
-# 💻 Linux Virtual Machines
+#Linux Virtual Machines
 resource "azurerm_virtual_machine" "vm" {
   count                 = 4
   name                  = "ad-hoc-demo-vm-${count.index}"
@@ -112,7 +112,7 @@ resource "azurerm_virtual_machine" "vm" {
   }
 }
 
-# 📤 Output Public IPs
+#Output Public IPs
 output "public_ips" {
   value = azurerm_public_ip.pip[*].ip_address
 }
